@@ -161,7 +161,7 @@ section.topo .flex {
 /* IMAGEM TOPO */
 .img-topo-site img {
     border-radius: 30px;
-    max-width: 450px;
+    max-width: 1000px;
     width: 100%;
     box-shadow: 0 10px 40px rgba(245, 217, 60, 0.3);
     position: relative;
