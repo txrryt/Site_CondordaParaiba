@@ -1,0 +1,568 @@
+/* ===== RESET GERAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #1a0505;
+    color: #fff;
+}
+
+/* ===== CLASSES UTILITÁRIAS ===== */
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.flex {
+    display: flex;
+}
+
+.titulo {
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.titulo span {
+    color: #f5d93c;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 60px;
+}
+
+.centralizado {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ===== HEADER ===== */
+header {
+    padding: 30px 0;
+    background-color: rgba(26, 5, 5, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+.logo img {
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* LINKS DO MENU */
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+header a:hover {
+    color: #f5d93c;
+    transform: scale(1.05);
+}
+
+/* MENU */
+.menu-desktop ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ===== BOTÃO PADRÃO ===== */
+.btn-contato button {
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #f5d93c;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #f5d93c;
+    transition: 0.3s ease;
+}
+
+.btn-contato button:hover {
+    background-color: #f5d93c;
+    color: #1a0505;
+    box-shadow: 0px 0px 20px #f5d93c;
+    transform: scale(1.05);
+}
+
+/* ===== TOPO DO SITE ===== */
+section.topo {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1a0505 0%, #470303 100%);
+}
+
+section.topo .flex {
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+/* TEXTO TOPO */
+.topo .txt-topo-site h1 {
+    color: #fff;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.topo .txt-topo-site h1 span {
+    color: #f5d93c;
+    font-weight: 700;
+}
+
+.topo .txt-topo-site p.destaque {
+    color: #f5d93c;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.topo .txt-topo-site p {
+    color: #ddd;
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* IMAGEM TOPO */
+.img-topo-site img {
+    border-radius: 30px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(245, 217, 60, 0.3);
+    position: relative;
+    animation: flutuante 3s ease-in-out infinite alternate;
+}
+
+/* ===== SEÇÃO ARTISTAS/PARCERIAS ===== */
+section.artistas {
+    padding: 100px 0;
+    background-color: #0f0303;
+}
+
+.artistas .flex {
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.artista-box {
+    flex: 1;
+    min-width: 260px;
+    max-width: 300px;
+    background: linear-gradient(135deg, #2a0808 0%, #470303 100%);
+    padding: 0;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+    border: 2px solid transparent;
+    overflow: hidden;
+}
+
+.artista-box:hover {
+    transform: translateY(-10px);
+    border-color: #f5d93c;
+    box-shadow: 0 10px 30px rgba(245, 217, 60, 0.4);
+}
+
+/* CONTAINER DA IMAGEM - AJUSTE A ALTURA AQUI */
+.artista-img {
+    width: 100%;
+    height: 280px; /* ← Altere este valor para mudar a altura das fotos */
+    overflow: hidden;
+    position: relative;
+}
+
+/* IMAGEM DO ARTISTA */
+.artista-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cover = preenche todo o espaço | contain = mostra a imagem completa */
+    transition: 0.5s;
+    filter: grayscale(20%);
+}
+
+.artista-box:hover .artista-img img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* GRADIENTE NA BASE DA FOTO */
+.artista-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, #2a0808, transparent);
+}
+
+.artista-box h3 {
+    font-size: 22px;
+    margin: 20px 0 15px;
+    color: #f5d93c;
+    padding: 0 20px;
+}
+
+.artista-box p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+    padding: 0 20px 25px;
+}
+
+/* ===== SEÇÃO SOBRE ===== */
+section.sobre {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1a0505 0%, #470303 100%);
+}
+
+.sobre .flex {
+    align-items: center;
+    gap: 80px;
+}
+
+.img-sobre img {
+    max-width: 450px;
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(245, 217, 60, 0.3);
+}
+
+.txt-sobre h2 {
+    font-size: 38px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.txt-sobre h2 span {
+    color: #f5d93c;
+}
+
+.txt-sobre p {
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.btn-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-social button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #f5d93c;
+    background-color: transparent;
+    color: #f5d93c;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-social button:hover {
+    background-color: #f5d93c;
+    color: #1a0505;
+    transform: scale(1.1);
+}
+
+/* ===== SEÇÃO VÍDEOS ===== */
+section.videos {
+    padding: 100px 0;
+    background-color: #0f0303;
+}
+
+.videos .flex {
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.video-box {
+    flex: 1;
+    min-width: 300px;
+    background: linear-gradient(135deg, #2a0808 0%, #470303 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.video-box:hover {
+    transform: translateY(-10px);
+    border-color: #f5d93c;
+    box-shadow: 0 10px 30px rgba(245, 217, 60, 0.3);
+}
+
+.video-placeholder {
+    background: linear-gradient(135deg, #1a0505 0%, #2a0808 100%);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.video-placeholder i {
+    font-size: 60px;
+    color: #f5d93c;
+    transition: 0.3s;
+}
+
+.video-placeholder:hover i {
+    transform: scale(1.2);
+}
+
+.video-placeholder p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.video-box h3 {
+    padding: 20px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+/* ===== SEÇÃO CONTATO ===== */
+section.contato {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1a0505 0%, #470303 100%);
+}
+
+.contato-info-central {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.info-box {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #2a0808 0%, #470303 100%);
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.info-box:hover {
+    border-color: #f5d93c;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(245, 217, 60, 0.3);
+}
+
+.info-box i {
+    font-size: 40px;
+    color: #f5d93c;
+    min-width: 40px;
+}
+
+.info-box h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #f5d93c;
+}
+
+.info-box p {
+    color: #ccc;
+    font-size: 15px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #0a0202;
+    padding: 60px 0 20px;
+}
+
+footer .flex {
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-logo img {
+    width: 80px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    color: #ccc;
+    font-size: 14px;
+    max-width: 250px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    color: #f5d93c;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #f5d93c;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #470303;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #888;
+    font-size: 14px;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes flutuante {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 30px;
+    }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media screen and (max-width: 1024px) {
+    .titulo {
+        font-size: 32px;
+    }
+
+    section.topo .flex,
+    .sobre .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .txt-sobre h2 {
+        text-align: center;
+    }
+
+    .btn-social {
+        justify-content: center;
+    }
+
+    .img-topo-site img,
+    .img-sobre img {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-desktop {
+        display: none;
+    }
+
+    .topo .txt-topo-site h1 {
+        font-size: 36px;
+    }
+
+    .artistas .flex,
+    .videos .flex {
+        flex-direction: column;
+    }
+
+    .contato-info-central {
+        flex-direction: column;
+    }
+
+    footer .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo p {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .topo .txt-topo-site h1 {
+        font-size: 28px;
+    }
+
+    .titulo {
+        font-size: 26px;
+    }
+
+    .btn-contato button {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+    .img-topo-site img,
+    .img-sobre img {
+        max-width: 280px;
+    }
+}
