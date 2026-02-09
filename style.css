@@ -339,6 +339,7 @@ section.videos {
 /* CONTAINER DO VÍDEO - RESPONSIVO */
 .video-container {
     position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
     padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
