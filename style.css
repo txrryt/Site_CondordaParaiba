@@ -340,6 +340,7 @@ section.videos {
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* Proporção 16:9 */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
     background: linear-gradient(135deg, #1a0505 0%, #2a0808 100%);
